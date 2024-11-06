@@ -1,0 +1,28 @@
+ALGORITHM Sentence
+VAR
+    s: STRING
+    charCount, wordCount, vowelCount: INTEGER
+BEGIN
+    write("write a sentence")
+    read(s)
+    
+    charCount := 0
+    wordCount := 0
+    vowelCount := 0
+    
+    FOR i FROM 0 TO s.length - 1 DO
+        charCount := charCount + 1
+
+        IF s[i] = " " THEN
+            wordCount := wordCount + 1
+        END_IF
+
+        IF s[i] IN "AEIOUaeiou" THEN
+            vowelCount := vowelCount + 1
+        END_IF
+    END_FOR
+    
+    write("Number of characters: ", charCount)
+    write("Number of words: ", wordCount)
+    write("Number of vowels: ", vowelCount)
+END
